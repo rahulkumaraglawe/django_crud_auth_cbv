@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>SHOW</title>
+{% endblock %}
+
+
+{% block content %}
+<table>
+    <thead>
+        <tr>
+            <th>ROOM NO</th>
+            <th>CUSTOMER NAME</th>
+            <th>CHECK-IN DATE</th>
+            <th>ACTIONS</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in object %}
+        <tr>
+            <td>{{i.room}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.cdate}}</td>
+            <td>
+                <a><button>UPDATE</button></a>
+                <a><button>DELETE</button></a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
